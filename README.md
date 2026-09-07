@@ -4,7 +4,7 @@ Welcome to the repository for my official web-based curriculum vitae.
 
 ## 🚀 Live Demo / Preview
 You can view the live interactive web version hosted via GitHub Pages here:
-👉 **[Insert your GitHub Pages Link Here]**
+👉 **[Darkcarard CV](https://darkcarard.github.io/darkcarard-cv/)**
 
 ## 📌 Features
 - **Responsive Layout:** Clean two-column design optimized for both desktop and mobile viewing.
