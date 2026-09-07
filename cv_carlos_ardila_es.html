@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carlos Javier Ardila Bohórquez - CV</title>
+<style>
+  :root {
+    --bg-color: #0b1120;
+    --card-bg: #1e293b;
+    --card-border: #334155;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent-blue: #38bdf8;
+    --accent-indigo: #818cf8;
+    --accent-teal: #2dd4bf;
+    --accent-glow: rgba(56, 189, 248, 0.12);
+    
+    /* Category Tag Styles */
+    --tag-backend-bg: rgba(56, 189, 248, 0.1);
+    --tag-backend-text: #38bdf8;
+    --tag-backend-border: rgba(56, 189, 248, 0.3);
+
+    --tag-arch-bg: rgba(129, 140, 248, 0.1);
+    --tag-arch-text: #818cf8;
+    --tag-arch-border: rgba(129, 140, 248, 0.3);
+
+    --tag-ai-bg: rgba(45, 212, 191, 0.1);
+    --tag-ai-text: #2dd4bf;
+    --tag-ai-border: rgba(45, 212, 191, 0.3);
+
+    --tag-db-bg: rgba(251, 146, 60, 0.1);
+    --tag-db-text: #fb923c;
+    --tag-db-border: rgba(251, 146, 60, 0.3);
+
+    --tag-lead-bg: rgba(244, 114, 182, 0.1);
+    --tag-lead-text: #f472b6;
+    --tag-lead-border: rgba(244, 114, 182, 0.3);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding: 40px 20px;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 26px 32px;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+
+  .card:hover {
+    border-color: #475569;
+  }
+
+  .header-card {
+    border-left: 6px solid var(--accent-blue);
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .header-card h1 {
+    font-size: 2.2rem;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+    font-weight: 800;
+  }
+
+  .header-card h2 {
+    font-size: 1.15rem;
+    color: var(--accent-blue);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+  }
+
+  .contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 30px;
+    padding-top: 14px;
+    border-top: 1px solid var(--card-border);
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .contact-item a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .contact-item a:hover {
+    text-decoration: underline;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--card-border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  p {
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    font-size: 0.98rem;
+  }
+
+  p strong, li strong {
+    color: var(--text-primary);
+  }
+
+  .experience-item {
+    margin-bottom: 26px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed rgba(51, 65, 85, 0.6);
+  }
+
+  .experience-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+
+  .job-role {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .job-date {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+    background: var(--accent-glow);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    padding: 3px 12px;
+    border-radius: 20px;
+  }
+
+  .company {
+    font-size: 0.95rem;
+    color: var(--accent-indigo);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    padding-left: 20px;
+    margin-bottom: 8px;
+  }
+
+  li {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+  }
+
+  .skill-category {
+    background: #0f172a;
+    border: 1px solid var(--card-border);
+    padding: 18px;
+    border-radius: 10px;
+  }
+
+  .skill-category-title {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .badge-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .badge {
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+
+  .badge-backend {
+    background-color: var(--tag-backend-bg);
+    color: var(--tag-backend-text);
+    border: 1px solid var(--tag-backend-border);
+  }
+
+  .badge-arch {
+    background-color: var(--tag-arch-bg);
+    color: var(--tag-arch-text);
+    border: 1px solid var(--tag-arch-border);
+  }
+
+  .badge-ai {
+    background-color: var(--tag-ai-bg);
+    color: var(--tag-ai-text);
+    border: 1px solid var(--tag-ai-border);
+  }
+
+  .badge-db {
+    background-color: var(--tag-db-bg);
+    color: var(--tag-db-text);
+    border: 1px solid var(--tag-db-border);
+  }
+
+  .badge-lead {
+    background-color: var(--tag-lead-bg);
+    color: var(--tag-lead-text);
+    border: 1px solid var(--tag-lead-border);
+  }
+
+  /* Two-column layout for Education & Languages */
+  .two-column-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+
+  .cert-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 8px;
+  }
+
+  .cert-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(51, 65, 85, 0.4);
+  }
+
+  .cert-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .cert-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .cert-issuer {
+    font-size: 0.88rem;
+    color: var(--accent-blue);
+  }
+
+  .cert-issuer a {
+    color: var(--accent-blue);
+    text-decoration: underline;
+  }
+
+  .lang-box {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--card-border);
+  }
+
+  @media (max-width: 768px) {
+    body { padding: 15px 10px; }
+    .card { padding: 20px; }
+    .job-header { flex-direction: column; }
+    .two-column-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="card header-card">
+    <div>
+      <h1>Carlos Javier Ardila Bohórquez</h1>
+      <h2>Software Technical Leader | Senior Software Developer</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-item">📍 Chía, Cundinamarca, Colombia</div>
+      <div class="contact-item">📞 +57 3014671074</div>
+      <div class="contact-item">✉️ <a href="mailto:carlosardilab@gmail.com">carlosardilab@gmail.com</a></div>
+      <div class="contact-item">🔗 <a href="https://linkedin.com/in/darkcarard" target="_blank">linkedin.com/in/darkcarard</a></div>
+    </div>
+  </header>
+
+  <!-- SUMMARY -->
+  <section class="card">
+    <div class="section-title">Perfil Profesional</div>
+    <p>Soy desarrollador de software Senior y Líder Técnico con más de 15 años de experiencia. He trabajado extensamente con tecnologías como Java, Java EE, Spring Boot, JSF, Hibernate, Golang, APIs REST y múltiples motores de bases de datos relacionales (Oracle, MySQL, PostgreSQL, Microsoft SQL Server) y no relacionales (MongoDB, Redis). Cuento con una sólida trayectoria en metodologías ágiles, integración y entrega continua (CI/CD), desarrollo con Clean Code, patrones de diseño, arquitecturas limpias y altos estándares de calidad.</p>
+    <p>Me considero una persona autodidacta, apasionada por aprender continuamente y compartir conocimiento. En <strong>Mercado Libre</strong>, he liderado la estrategia y arquitectura de plataformas financieras a gran escala, descentralizadas y basadas en eventos, aplicando principios de Domain-Driven Design (DDD), liderando la migración desde un procesador externo hacia el motor propietario in-house y colaborando en la evolución de la plataforma de facturación.</p>
+    <p>Integro activamente la <strong>Inteligencia Artificial</strong> en mi flujo diario de ingeniería usando Prompt Engineering, Spec-Driven Development, Model Context Protocol (MCP), agentes AI y entornos multiagente (Claude, Codex), además de la creación de skills y plugins personalizados para acelerar revisiones de arquitectura, revisiones de código, pruebas integrales, documentación técnica y entrega de software.</p>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="card">
+    <div class="section-title">Experiencia Profesional</div>
+
+    <div class="experience-item">
+      <div class="job-header">
+        <span class="job-role">Software Technical Leader</span>
+        <span class="job-date">Febrero 2023 – Septiembre 2026</span>
+      </div>
+      <div class="company">Mercado Libre</div>
+      <ul>
+        <li>Lideré la estrategia técnica y acompañé la migración de la plataforma de tarjetas de crédito desde un procesador externo hacia el motor propietario in-house.</li>
+        <li>Dirigí el ciclo completo de desarrollo del dominio transaccional del motor de tarjeta de crédito (desde el análisis y diseño hasta el despliegue y mantenimiento), mediante sistemas distribuidos, arquitecturas orientadas a eventos y APIs REST altamente escalables.</li>
+        <li>Apliqué Domain-Driven Design (DDD), Event Storming y Event Modelling para respaldar, validar y evolucionar las decisiones de arquitectura de la plataforma.</li>
+        <li>Integré herramientas de Inteligencia Artificial para potenciar la productividad y eficiencia en el flujo completo del rol técnico.</li>
+        <li>Facilité e impulsé espacios de transferencia de conocimiento sobre arquitectura, tecnologías emergentes y mejores prácticas con múltiples equipos de ingeniería.</li>
+        <li>Lideré la evaluación y acompañamiento en entrevistas técnicas para el proceso de selección y contratación de nuevos talentos.</li>
+      </ul>
+    </div>
+
+    <div class="experience-item">
+      <div class="job-header">
+        <span class="job-role">Sr Software Engineer</span>
+        <span class="job-date">Mayo 2020 – Febrero 2023</span>
+      </div>
+      <div class="company">Mercado Libre</div>
+      <ul>
+        <li>Diseñé y desarrollé microservicios y servicios backend de alto rendimiento utilizando Go (Golang).</li>
+        <li>Implementé patrones de Event Sourcing y arquitecturas orientadas a eventos para garantizar la máxima escalabilidad, consistencia y desempeño del sistema.</li>
+        <li>Promovido de Senior Software Engineer a Líder Técnico gracias al impacto estratégico de mis contribuciones en la arquitectura del producto y al liderazgo técnico demostrado dentro del equipo.</li>
+      </ul>
+    </div>
+
+    <div class="experience-item">
+      <div class="job-header">
+        <span class="job-role">Arquitecto Desarrollador</span>
+        <span class="job-date">Mayo 2019 – Mayo 2020</span>
+      </div>
+      <div class="company">Ceiba Software</div>
+      <ul>
+        <li>Diseñé y definí arquitecturas de software orientadas a microservicios e integración para diversos clientes corporativos.</li>
+        <li>Guié y mentoreé a equipos de desarrollo en la adopción de buenas prácticas de programación, Clean Code, patrones de diseño y estándares de calidad.</li>
+        <li>Lideré la implementación de proyectos clave utilizando Java y Spring Boot.</li>
+      </ul>
+    </div>
+
+    <div class="experience-item">
+      <div class="job-header">
+        <span class="job-role">Senior Java Developer</span>
+        <span class="job-date">Septiembre 2018 – Mayo 2019</span>
+      </div>
+      <div class="company">Sophos Solutions S.A.S.</div>
+      <ul>
+        <li>Desarrollo de soluciones core para el sector financiero utilizando Java, Spring Framework y arquitecturas orientadas a servicios.</li>
+      </ul>
+    </div>
+
+    <div class="experience-item">
+      <div class="job-header">
+        <span class="job-role">Desarrollador Semi Senior</span>
+        <span class="job-date">Marzo 2017 – Septiembre 2018</span>
+      </div>
+      <div class="company">Gattaca Outsourcing S.A.S (GTK)</div>
+      <ul>
+        <li>Construcción y mantenimiento de aplicaciones web corporativas con Java EE, Spring, Hibernate y bases de datos relacionales.</li>
+      </ul>
+    </div>
+
+    <div class="experience-item">
+      <div class="job-header">
+        <span class="job-role">Contratista / Desarrollador de Software</span>
+        <span class="job-date">Agosto 2007 – Diciembre 2016</span>
+      </div>
+      <div class="company">Superintendencia de Servicios Públicos Domiciliarios</div>
+      <ul>
+        <li>Análisis, diseño, desarrollo y pruebas de sistemas de información bajo los lineamientos institucionales de TI.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="card">
+    <div class="section-title">Habilidades Técnicas y Competencias</div>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <div class="skill-category-title">Lenguajes & Backend</div>
+        <div class="badge-container">
+          <span class="badge badge-backend">Go (Golang)</span>
+          <span class="badge badge-backend">Java</span>
+          <span class="badge badge-backend">Spring Boot</span>
+          <span class="badge badge-backend">REST APIs</span>
+          <span class="badge badge-backend">JSF</span>
+          <span class="badge badge-backend">Hibernate</span>
+          <span class="badge badge-backend">C#</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-category-title">Arquitectura & Métodos</div>
+        <div class="badge-container">
+          <span class="badge badge-arch">Domain-Driven Design (DDD)</span>
+          <span class="badge badge-arch">Event Storming</span>
+          <span class="badge badge-arch">Event Modelling</span>
+          <span class="badge badge-arch">Event Sourcing</span>
+          <span class="badge badge-arch">Microservicios</span>
+          <span class="badge badge-arch">Clean Architectures</span>
+          <span class="badge badge-arch">Clean Code</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-category-title">IA & Agentes</div>
+        <div class="badge-container">
+          <span class="badge badge-ai">Prompt Engineering</span>
+          <span class="badge badge-ai">Model Context Protocol (MCP)</span>
+          <span class="badge badge-ai">Agentes AI</span>
+          <span class="badge badge-ai">Claude / Codex</span>
+          <span class="badge badge-ai">Skills & Plugins</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-category-title">Bases de Datos</div>
+        <div class="badge-container">
+          <span class="badge badge-db">MongoDB</span>
+          <span class="badge badge-db">Redis</span>
+          <span class="badge badge-db">PostgreSQL</span>
+          <span class="badge badge-db">MySQL</span>
+          <span class="badge badge-db">Oracle</span>
+          <span class="badge badge-db">SQL Server</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-category-title">Liderazgo & Estrategia</div>
+        <div class="badge-container">
+          <span class="badge badge-lead">Liderazgo Técnico</span>
+          <span class="badge badge-lead">Mentoría</span>
+          <span class="badge badge-lead">Code & Arch Reviews</span>
+          <span class="badge badge-lead">Entrevistas Técnicas</span>
+          <span class="badge badge-lead">ADRs</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TWO-COLUMN GRID: EDUCATION & LANGUAGES + CERTIFICATIONS -->
+  <div class="two-column-grid">
+
+    <!-- EDUCATION & LANGUAGES CARD -->
+    <section class="card">
+      <div class="section-title">Educación e Idiomas</div>
+      <div class="job-header">
+        <span class="job-role">Ingeniería de Sistemas</span>
+        <span class="job-date">Febrero 2016</span>
+      </div>
+      <div class="company">Universidad Nacional Abierta y a Distancia (UNAD)</div>
+      
+      <div class="lang-box">
+        <div class="skill-category-title" style="color: var(--accent-blue);">Idiomas</div>
+        <p><strong>Español:</strong> Nativo</p>
+        <p><strong>Inglés:</strong> Avanzado / Proficiente (C2)</p>
+        <p style="font-size: 0.88rem; color: var(--accent-blue);">
+          📜 Certificado EF SET English Certificate C2 Proficient: 
+          <a href="https://cert.efset.org/rBxZ2f" target="_blank">cert.efset.org/rBxZ2f</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS CARD -->
+    <section class="card">
+      <div class="section-title">Certificaciones Destacadas</div>
+      <div class="cert-list">
+        <div class="cert-item">
+          <span class="cert-name">Meli BeTrainer (Trainer MELI)</span>
+          <span class="cert-issuer">Mercado Libre (Mayo 2024)</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-name">Unity Certified Developer</span>
+          <span class="cert-issuer">Unity Technologies</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-name">AWS Certified Cloud Practitioner / Solutions Architect</span>
+          <span class="cert-issuer">Amazon Web Services</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-name">Spring Boot & Microservices Specialist</span>
+          <span class="cert-issuer">Udemy / Pivotal Standards</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-name">AI Prompt Engineering & AI Agents Specialization</span>
+          <span class="cert-issuer">Udemy / DeepLearning.AI</span>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+</div>
+
+</body>
+</html>
